@@ -17,7 +17,9 @@ namespace PluralsightPieCourse.Models
         public string ImageThumbnailUrl { get; set; }
         public bool IsPieOfTheWeek { get; set; }
         public bool InStock { get; set; }
-        public int CatergoryId { get; set; }
-        public Catergory Catergory { get; set; }
+        public int CategoryId { get; set; }
+        public Category Category { get; set; }
+
+        public string Notes { get; set; }
     }
 }

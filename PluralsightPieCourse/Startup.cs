@@ -7,18 +7,42 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using PluralsightPieCourse.Models;
+using Microsoft.Extensions.Configuration;
+using Microsoft.EntityFrameworkCore;
 
 namespace PluralsightPieCourse
 {
     public class Startup
     {
+        public IConfiguration Configuration { get; }
+        public Startup(IConfiguration configuration)
+        {
+            Configuration = configuration;
+        }
+
         // This method gets called by the runtime. Use this method to add services to the container.
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
        
         // Think of this as a Dependency Injection Container
         public void ConfigureServices(IServiceCollection services)
         {
+            // add entity framework core 
+            services.AddDbContext<AppDbContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
+            // notice all you have to do to reference the real db is to swap out the class name
+
+            //services.AddScoped<IPieRepository, MockPieRepository>();
+            //services.AddScoped<ICategoryRepository, MockCategoryRepository>();
+            services.AddScoped<IPieRepository, PieRepository>();
+            services.AddScoped<ICategoryRepository, CategoryRepository>();
+
+
+            // you will also commonly see AddTransient and AddSingleton in place of AddScoped
+            
             services.AddControllersWithViews();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -41,7 +65,7 @@ namespace PluralsightPieCourse
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{is?}");
+                    pattern: "{controller=Home}/{action=Index}/{id?}");
             });
         }
     }
