@@ -59,13 +59,15 @@ namespace PluralsightPieCourse
             // middleware components
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-            app.UseRouting(); //enables mvc to map requests to right code
+            app.UseRouting(); //enables mvc to map requests to right code - convention based routing
 
+            // endpoints are places we will be nagivating to
+            // this decides what to do with the incoming URI from in the browser
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Home}/{action=Index}/{id:int?}");
             });
         }
     }
