@@ -28,7 +28,10 @@ namespace PluralsightPieCourse.Models
 
             var context = services.GetService<AppDbContext>();
 
-            string cartId = session.GetString("CartId") ?? Guid.NewGuid().ToString();
+            // the ?? is a null coalescing operator:https://docs.microsoft.com/en-in/dotnet/csharp/language-reference/operators/null-coalescing-operator
+            // Left hand is returned if not null, otherwise right hand returned
+            // either GET the session cart id OR create a new one with GUID
+            string cartId = session.GetString("CartId") ?? Guid.NewGuid().ToString(); 
 
             session.SetString("CartId", cartId);
 

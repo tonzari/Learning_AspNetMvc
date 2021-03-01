@@ -38,6 +38,9 @@ namespace PluralsightPieCourse
             services.AddScoped<IPieRepository, PieRepository>();
             services.AddScoped<ICategoryRepository, CategoryRepository>();
 
+            // orders
+            services.AddScoped<IOrderRepository, OrderRepository>();
+
             //shopping cart
             services.AddScoped<ShoppingCart>(sp => ShoppingCart.GetCart(sp));
             services.AddHttpContextAccessor();
