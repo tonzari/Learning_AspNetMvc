@@ -27,7 +27,7 @@ using PluralsightPieCourse.Models;
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"f4cb6935a5c52f3882d3490662ed887ce880ce29", @"/Views/Shared/Components/ShoppingCartSummary/Default.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"53bff79f395ade11a685c726f62581b6fa8f2950", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"d6792b119a28a57ba0845ca4f214a39bb2985a2e", @"/Views/_ViewImports.cshtml")]
     public class Views_Shared_Components_ShoppingCartSummary_Default : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<ShoppingCartViewModel>
     {
         #pragma warning disable 1998
