@@ -150,3 +150,5 @@ C:\Users\dude_dude\source\repos\PluralsightPieCourse\PluralsightPieCourse\bin\De
 C:\Users\dude_dude\source\repos\PluralsightPieCourse\PluralsightPieCourse\obj\Debug\netcoreapp3.1\Razor\Views\Pie\Details.cshtml.g.cs
 C:\Users\dude_dude\source\repos\PluralsightPieCourse\PluralsightPieCourse\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Carousel.cshtml.g.cs
 C:\Users\dude_dude\source\repos\PluralsightPieCourse\PluralsightPieCourse\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_PieCard.cshtml.g.cs
+C:\Users\dude_dude\source\repos\PluralsightPieCourse\PluralsightPieCourse\obj\Debug\netcoreapp3.1\PluralsightPieCourse.csprojAssemblyReference.cache
+C:\Users\dude_dude\source\repos\PluralsightPieCourse\PluralsightPieCourse\obj\Debug\netcoreapp3.1\Razor\Views\ShoppingCart\Index.cshtml.g.cs

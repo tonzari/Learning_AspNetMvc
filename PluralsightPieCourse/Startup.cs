@@ -38,6 +38,10 @@ namespace PluralsightPieCourse
             services.AddScoped<IPieRepository, PieRepository>();
             services.AddScoped<ICategoryRepository, CategoryRepository>();
 
+            //shopping cart
+            services.AddScoped<ShoppingCart>(sp => ShoppingCart.GetCart(sp));
+            services.AddHttpContextAccessor();
+            services.AddSession();
 
             // you will also commonly see AddTransient and AddSingleton in place of AddScoped
             
@@ -59,6 +63,8 @@ namespace PluralsightPieCourse
             // middleware components
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+            app.UseSession(); // make sure this comes before the routing middleware
+            
             app.UseRouting(); //enables mvc to map requests to right code - convention based routing
 
             // endpoints are places we will be nagivating to
